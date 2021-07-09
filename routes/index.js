@@ -1,15 +1,18 @@
 var express = require('express');
 var router = express.Router();
-const sass= require('node-sass'); // We're adding the node-sass module
-const path    = require('path'); 
+const api = require('../bin/api');
+
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Star Wars' });
 });
 
-router.get('/nosotros', function(req, res, next) {
-  res.render('pages/nosotros', { title: 'Nosotros' });
+router.get('/nosotros', async (req, res, next) => {
+  const testFunc = await api.test();
+   res.render('pages/nosotros', { title: 'Nosotros',testFunc });
+  
 });
 
  

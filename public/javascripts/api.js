@@ -22,9 +22,29 @@ const swapifilms = 'https://swapi.dev/api/films'
         console.log(moviesTitleArray);
 
         moviesTitleArray.forEach((movie)=>{
-            List.innerHTML += `<li>${movie}</li>`
-        })    
+        List.innerHTML += `<li class='list-item'>${movie}</li>`
+        
+            
+         
+         })    
+        
+        
+         let listLiHTMLCollection = document.getElementById('List').getElementsByClassName('list-item')
+        
+        let listLi = [].slice.call(listLiHTMLCollection);
+         
+    
+     
+        listLi.forEach((e,b,c)=>{
+            
+              addEventListener ('click',()=>{
+                console.log(e,b);
+              })  
+        });
 
+    
+
+       
 
 
 
