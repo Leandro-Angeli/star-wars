@@ -35,21 +35,53 @@ const swapifilms = 'https://swapi.dev/api/films'
          
     
      
-        listLi.forEach((e,b,c)=>{
+        // listLi.forEach((e,b,c)=>{
             
-              addEventListener ('click',()=>{
-                console.log(e,b);
-              })  
-        });
+        //       addEventListener ('click',()=>{
+        //         console.log(e,b);
+        //       })  
+        // });
+
+        for (let index = 0; index <listLi.length; index++) {
+            listLi[index].classList.add('Movie-Title-Left');
+            
+        }
+
+        const moviesTitleNodeList = document.querySelectorAll('.Movie-Title-Left');
 
     
+        console.log(moviesTitleNodeList);
+        const arrayMoviesLeft = Array.from(moviesTitleNodeList);
+        console.log(arrMov);
+
+
+        arrMoviesList.forEach((title)=>{
+
+            const showTxt = ()=>{
+                movieData.innerHTML = title.innerText;
+
+            }
+            title.addEventListener('click',showTxt)
+        })
+
+
+        })
+
+        
+
+
+
+   
+
+   
+
 
        
 
 
 
         
-        })
+        
     }
     else {
         console.error('oops, fails'+res.status);

@@ -1,6 +1,6 @@
 var express = require('express');
+
 var router = express.Router();
-const api = require('../bin/api');
 
 
 
@@ -9,9 +9,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Star Wars' });
 });
 
-router.get('/nosotros', async (req, res, next) => {
-  const testFunc = await api.test();
-   res.render('pages/nosotros', { title: 'Nosotros',testFunc });
+router.get('/nosotros',  (req, res, next) => {
+  
+    res.render('pages/nosotros', { title: 'Nosotros' });
+  
+
   
 });
 

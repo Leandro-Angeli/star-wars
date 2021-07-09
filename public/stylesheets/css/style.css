@@ -7,19 +7,32 @@
 :root{
   --yellow:#FFE81F!important;
 }
-body {
-  padding: 50px;
+body {margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: black;
   color:var(--yellow);
 }
 ul{padding:0;
+  
+
+ }
+ .ul-left{border-right: 2px solid;
+        padding-right: 1rem; 
 
  }
 li{list-style: none;
   padding: .5rem;
+ 
 
+ }
+ header{height: 100vh;
+    background-image: url('../../images/headerback.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
  }
 
 a {
@@ -32,3 +45,26 @@ h1{font-family: 'starwars',"Lucida Grande", Helvetica, Arial, sans-serif;
 
 }
 h2{ color:var(--yellow);}
+
+.data-div{    border: 3px solid;
+  padding: 1rem;
+  border-radius: .5rem;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  display:flex;
+  position: relative;
+  
+ }
+ .data-div::before{
+          content:'Data Base';
+          display:inline-block;
+          position: absolute;
+          font-family: 'starwars',"Lucida Grande", Helvetica, Arial, sans-serif;
+          font-size: 2rem;
+          left: 50%;
+          transform: translate(-50%, -25px);
+          top:10px;
+          background-color: black;
+          padding: 0 1rem;
+  }
