@@ -68,3 +68,16 @@ h2{ color:var(--yellow);}
           background-color: black;
           padding: 0 1rem;
   }
+
+  .movie-data{ flex-shrink: 2;
+              padding:1rem;
+
+      }
+
+
+      .movie-data h3{font-family: 'starwars',"Lucida Grande", Helvetica, Arial, sans-serif;
+                    font-size: 1.5rem;
+                    letter-spacing: .15rem;
+                    text-decoration: underline;
+
+       }     

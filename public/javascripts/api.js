@@ -1,3 +1,4 @@
+// const { Body } = require("node-fetch");
 
 const swapifilms = 'https://swapi.dev/api/films'
 
@@ -52,20 +53,102 @@ const swapifilms = 'https://swapi.dev/api/films'
     
         console.log(moviesTitleNodeList);
         const arrayMoviesLeft = Array.from(moviesTitleNodeList);
-        console.log(arrMov);
+        console.log(arrayMoviesLeft);
+        /* ANOTHER TRY */
+      
+     for (const item of arrayMoviesLeft) {
+         console.log(item.innerHTML);
+         item.addEventListener('click',()=>{
+             for (const movie of moviesArray) {
+                
+                if (item.innerText === movie.title) {
+                   const sliceString = (str) => {
+                      const sliced = str.slice(0,10);
+                       return sliced;
+                       
+                   }
+                
+                  const changeDateFormat = (param) =>{
+                    const changedFormat = param.split('-').reverse().join('/');
+                    return changedFormat;
+                  }
+                   const slicedStr = sliceString(movie.release_date);
+                   
+                   const strToChangeFormat = changeDateFormat(slicedStr);
+                  
+
+                    movieData.innerHTML= ` <h3> Title :${movie.title}</h3>
+                                             <div> <p>Year of release: ${strToChangeFormat}</p>
+                                                    <p>Director: ${movie.director}</p>
+                                                    <p>Producer: ${movie.producer}</p>
+                                                    <p>Order in  saga: ${movie.episode_id}</p>
+                                                    <p>Opening crawl: ${movie.opening_crawl}</p>
+                                             </div>
+                                            `;
+                 
+                }
+                 
+             }
+            
+          
+         })
+         
+     }
+       
+
+   
 
 
-        arrMoviesList.forEach((title)=>{
+        
+         
 
-            const showTxt = ()=>{
-                movieData.innerHTML = title.innerText;
+        /*ANOTHER TRY*/ 
 
-            }
-            title.addEventListener('click',showTxt)
+        // arrayMoviesLeft.forEach((title)=>{
+
+        //     const showTxt = ()=>{
+        //         // movieData.innerHTML = title.innerText;
+        //        console.log( typeof (arrayMoviesLeft));
+               
+        //       let movieTitleLeft = document.querySelectorAll('.Movie-Title-Left');
+        //       movieTitleLeft = Array.from(movieTitleLeft);
+        //        console.log( movieTitleLeft);
+
+        //         const textTest = ()=>moviesArray.map(movie =>{
+                  
+        //             if ( arrayMoviesLeft[i]===moviesArray[i] ) {
+        //                console.log(2);
+                      
+                        
+        //             }
+        //             console.log(movie.title);
+                   
+                   
+                    
+        //         })
+        //         console.log(textTest());
+        //     }
+        //     title.addEventListener('click',showTxt)
+        //     })
+
+        console.log(moviesArray);
+
+        // var arr =[1,2,3];
+        // var arr2 = [11,22,33,1]
+
+        
+
+     
+
+
+
+
+
+
+            /* END THEN*/
         })
 
-
-        })
+        
 
         
 
@@ -74,6 +157,7 @@ const swapifilms = 'https://swapi.dev/api/films'
    
 
    
+
 
 
        
